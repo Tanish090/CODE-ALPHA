@@ -1,0 +1,8 @@
+from scapy.all import sniff
+
+def packet_callback(packet):
+    print(packet.summary())
+
+# Capture network packets (requires administrative/root privileges)
+print("Starting network sniffer...")
+sniff(prn=packet_callback, store=False)
